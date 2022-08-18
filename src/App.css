@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+
+:root{
+  --main-font: "Marrieweather Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.app{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-family: var(--main-font);
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.app .weather-container{
+    position: absolute;
+    top: 100px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.weather-container .top-part{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.top-part .condition-level{
+    font-size: 9rem;
+    color: #764af1;
+}
+
+.top-part .condition-high-low{
+    margin: 20px;
+}
+
+.top-part .condition-high{
+    color: #f32424;
+}
+
+.top-part .condition-low{
+    color: #1363DF;
+}
+
+
+.top-part .condition-high-low .conditionLabel{
+    margin-top: 20px;
+    color: #DFF6FF;
+    font-size: 3rem;
+}
+
+.weather-container .place-location{
+    font-size: 4rem;
+    color: #FF8C32;
+}
+
+
+.search-input{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left:1px solid rgba(255, 255, 255, 0.5) ;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+    overflow: hidden;
+    padding: 20px;
+    bottom: 100px;
+    
+}
+
+.search-input > input{
+    font-size: 25px;
+    width: 900px;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    color: #000;
+    transform: scale(1);
+}
+
+.search-input > input::placeholder{
+    color: #000;
+    font-style: italic;
+}
+
+.search-input > input:hover{
+    transform: scale(1.4);
+}
+
+.search-button{
+    cursor: pointer;
+    transform: scale(1.2);
+    margin-right: 10px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .search-button:hover{
+    transform: scale(1.4);
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
